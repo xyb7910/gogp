@@ -1,21 +1,18 @@
 package slice
 
-import (
-	"fmt"
-	"testing"
-)
+import "testing"
 
-func TestAdd(t *testing.T) {
-	arr := []int{1, 2, 3}
-	back := Add(arr, 4, 2)
-	fmt.Println(back)
-}
+func TestSlice(t *testing.T) {
+	testCases := []struct {
+		name string
+		// 输入的参数
 
-func TestDiffSet(t *testing.T) {
-	src := []int{1, 2, 3, 4, 5}
-	//srcMap := mapx.ToMap(src)
-	//fmt.Println(srcMap)
-	dist := []int{2, 3, 4, 5, 6}
-	res := UnionSet(src, dist)
-	fmt.Println(res)
+	}{
+		{},
+	}
+	for _, tc := range testCases {
+		t.Run(tc.name, func(t *testing.T) {
+
+		})
+	}
 }
