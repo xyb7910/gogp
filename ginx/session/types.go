@@ -2,6 +2,7 @@ package session
 
 import (
 	"context"
+	"errors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -9,6 +10,14 @@ type Claims struct {
 	Uid  int64
 	SSId string
 	Data map[string]string
+}
+
+func (c *Claims) Get(key string) (any, error) {
+	val, ok := c.Data[key]
+	if !ok {
+		return nil, errors.New("key not exists")
+	}
+	return val, nil
 }
 
 type Session interface {

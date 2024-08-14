@@ -12,3 +12,7 @@ func NewSession(ctx *gin.Context, uid int64, jwtData map[string]string,
 	sessData map[string]any) (Session, error) {
 	return defaultProvider.NewSession(ctx, uid, jwtData, sessData)
 }
+
+func Get(ctx *gin.Context) (Session, error) {
+	return defaultProvider.GetSession(ctx)
+}
