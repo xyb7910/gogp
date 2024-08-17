@@ -3,7 +3,7 @@ package jwt
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/xyb7910/gogp/set"
+	"github.com/xyb7910/gogp/generics/set"
 	"log/slog"
 	"net/http"
 	"time"

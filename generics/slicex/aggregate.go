@@ -1,8 +1,8 @@
-package slice
+package slicex
 
 import "github.com/xyb7910/gogp"
 
-// Max 返回 slice 中最大的元素及其元素下标
+// Max 返回 slicex 中最大的元素及其元素下标
 func Max[T gogp.RealNumber](src []T) (T, int) {
 	maxVal := src[0]
 	index := 0
@@ -15,7 +15,7 @@ func Max[T gogp.RealNumber](src []T) (T, int) {
 	return maxVal, index
 }
 
-// Min 返回 slice 中最小的元素及其元素下标
+// Min 返回 slicex 中最小的元素及其元素下标
 func Min[T gogp.RealNumber](src []T) (minVal T, index int) {
 	minVal = src[0]
 	index = 0
@@ -28,7 +28,7 @@ func Min[T gogp.RealNumber](src []T) (minVal T, index int) {
 	return minVal, index
 }
 
-// Sum 返回 slice 中所有元素的和
+// Sum 返回 slicex 中所有元素的和
 func Sum[T gogp.RealNumber](src []T) T {
 	var sum T
 	for _, v := range src {

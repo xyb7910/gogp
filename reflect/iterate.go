@@ -12,7 +12,7 @@ func Iterate(input any) ([]any, error) {
 	kind := typ.Kind()
 
 	if kind != reflect.Array && kind != reflect.Slice && kind != reflect.String {
-		return nil, errors.New("input must be array, slice or string")
+		return nil, errors.New("input must be array, slicex or string")
 	}
 	res := make([]any, 0, val.Len())
 	for i := 0; i < val.Len(); i++ {

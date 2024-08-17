@@ -4,7 +4,6 @@ import (
 	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/xyb7910/gogp"
-	"github.com/xyb7910/gogp/gctx"
 	"github.com/xyb7910/gogp/ginx/session"
 	"log/slog"
 	"net/http"
@@ -16,7 +15,7 @@ type Result struct {
 	Data any
 }
 
-type Context = gctx.Context
+type Context = gin.Context
 
 func W(fn func(ctx *gin.Context) (Result, error)) gin.HandlerFunc {
 	return func(ctx *gin.Context) {

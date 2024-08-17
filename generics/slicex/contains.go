@@ -1,8 +1,10 @@
-package slice
+package slicex
 
-import "github.com/xyb7910/gogp/mapx"
+import (
+	"github.com/xyb7910/gogp/generics/mapx"
+)
 
-// Contains 判断 slice 中是否包含某个元素
+// Contains 判断 slicex 中是否包含某个元素
 func Contains[T comparable](src []T, element T) bool {
 	for _, v := range src {
 		if equal(v, element) {
@@ -12,7 +14,7 @@ func Contains[T comparable](src []T, element T) bool {
 	return false
 }
 
-// ContainsAll 判断 slice 中是否包含所有元素
+// ContainsAll 判断 slicex 中是否包含所有元素
 func ContainsAll[T comparable](src, dist []T) bool {
 	distMap := mapx.ToMap(dist)
 	for _, v := range src {
@@ -23,7 +25,7 @@ func ContainsAll[T comparable](src, dist []T) bool {
 	return true
 }
 
-// ContainsAny 判断 slice 中是否包含任意一个元素
+// ContainsAny 判断 slicex 中是否包含任意一个元素
 func ContainsAny[T comparable](src, dist []T) bool {
 	for _, v := range src {
 		for _, d := range dist {

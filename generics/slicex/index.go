@@ -1,4 +1,4 @@
-package slice
+package slicex
 
 // IndexOf returns the index of the first occurrence of element in src.
 func IndexOf[T comparable](src []T, element T) (index int) {

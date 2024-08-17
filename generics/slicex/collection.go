@@ -1,8 +1,10 @@
-package slice
+package slicex
 
-import "github.com/xyb7910/gogp/mapx"
+import (
+	"github.com/xyb7910/gogp/generics/mapx"
+)
 
-// DiffSet return a slice, src slice existed, but dist slice not existed
+// DiffSet return a slicex, src slicex existed, but dist slicex not existed
 /*
  collection src - collection dist = DiffSet,
 */
@@ -17,7 +19,7 @@ func DiffSet[T comparable](src, dist []T) (res []T) {
 	return
 }
 
-// SymDiffSet return a slice, src slice and dist slice both not existed
+// SymDiffSet return a slicex, src slicex and dist slicex both not existed
 func SymDiffSet[T comparable](src, dist []T) (res []T) {
 	srcMap, distMap := mapx.ToMap(src), mapx.ToMap(dist)
 	// Add elements in src but not in dist
@@ -36,7 +38,7 @@ func SymDiffSet[T comparable](src, dist []T) (res []T) {
 	return
 }
 
-// IntersectSet return a slice, src slice and dist slice both existed
+// IntersectSet return a slicex, src slicex and dist slicex both existed
 func IntersectSet[T comparable](src, dist []T) (res []T) {
 	srcMap := mapx.ToMap(src)
 	for _, v := range dist {
@@ -47,7 +49,7 @@ func IntersectSet[T comparable](src, dist []T) (res []T) {
 	return
 }
 
-// UnionSet return a slice, src slice exited or dist slice existed
+// UnionSet return a slicex, src slicex exited or dist slicex existed
 func UnionSet[T comparable](src, dist []T) (res []T) {
 	srcMap := mapx.ToMap(src)
 	for _, v := range dist {

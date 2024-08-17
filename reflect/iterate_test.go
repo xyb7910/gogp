@@ -14,7 +14,7 @@ func TestIterate(t *testing.T) {
 		wantErr error
 	}{
 		{
-			name:    "slice",
+			name:    "slicex",
 			input:   []int{1, 2, 3},
 			wantRes: []any{1, 2, 3},
 		},
@@ -31,7 +31,7 @@ func TestIterate(t *testing.T) {
 		{
 			name:    "invalid",
 			input:   map[string]int{"a": 1},
-			wantErr: errors.New("input must be array, slice or string"),
+			wantErr: errors.New("input must be array, slicex or string"),
 		},
 	}
 	for _, tt := range testcases {
